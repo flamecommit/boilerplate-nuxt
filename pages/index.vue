@@ -15,12 +15,13 @@ export default {
   setup(props) {
     const store = useStore();
 
+    /* start : dummy */
     const dummy = ref({});
 
-    useFetch(async () => 
-      dummy.value = await store.dispatch('dummy/index'));
+    useFetch(async () => dummy.value = await store.dispatch('dummy/index'));
 
     console.log(dummy);
+    /* end : dummy */
 
     const person1 = ref({
       name: 'nkh',
