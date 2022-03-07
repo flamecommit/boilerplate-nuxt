@@ -9,24 +9,14 @@
   </div>
 </template>
 
-<script>
-import { ref, useFetch, useStore } from '@nuxtjs/composition-api'
+<script setup>
+import { useStore, useFetch } from '@nuxtjs/composition-api'
+import { ref } from '@nuxtjs/composition-api'
 
-const getTodoList = () => {
-  const store = useStore();
-  const todoList = ref({});
+const store = useStore();
+const todoList = ref({});
 
-  useFetch(async () => todoList.value = await store.dispatch('todo/index'));
-
-  return { todoList }
-}
-
-export default {
-  name: 'CompositionPage',
-  setup() {
-    const { todoList } = getTodoList()
-
-    return { todoList }
-  }
-}
+useFetch(async () => {
+  todoList.value = await store.dispatch('todo/index')
+})
 </script>

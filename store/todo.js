@@ -1,7 +1,11 @@
+const state = () => ({
+  baseUrl: 'https://jsonplaceholder.typicode.com'
+})
+
 const actions = {
-  async index(context, payload) {
+  async index({ state }, payload) {
     try {
-      const res = await this.$axios.get('https://jsonplaceholder.typicode.com/todos', {
+      const res = await this.$axios.get(`${state.baseUrl}/todos`, {
         params: payload
       });
 
@@ -11,11 +15,9 @@ const actions = {
       return err;
     }
   },
-  async show(context, payload) {
-    console.log('show');
-
+  async show({ state }, payload) {
     try {
-      const res = await this.$axios.get(`https://jsonplaceholder.typicode.com/todos/${payload.id}`);
+      const res = await this.$axios.get(`${state.baseUrl}/todos/${payload.id}`);
 
       return res.data;
     } catch(err) {
@@ -25,4 +27,4 @@ const actions = {
   }
 }
 
-export default { actions };
+export default { state, actions };
