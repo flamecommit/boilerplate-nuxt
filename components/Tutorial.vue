@@ -47,6 +47,9 @@
 
 <script>
 export default {
-  name: 'NuxtTutorial'
+  name: 'NuxtTutorial',
+  aa: () => {
+    
+  }
 }
 </script>
