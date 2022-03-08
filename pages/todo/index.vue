@@ -10,13 +10,21 @@
 </template>
 
 <script setup>
-import { useStore, useFetch } from '@nuxtjs/composition-api'
-import { ref } from '@nuxtjs/composition-api'
+import { useStore, useFetch, useRoute } from '@nuxtjs/composition-api'
+import { ref, watch } from '@nuxtjs/composition-api'
+import { onUpdated } from '@nuxtjs/composition-api'
 
 const store = useStore();
 const todoList = ref({});
+const route = useRoute();
+
+console.log(route.value);
 
 useFetch(async () => {
   todoList.value = await store.dispatch('todo/index')
+})
+
+onUpdated(() => {
+  console.log('onUpdated');
 })
 </script>

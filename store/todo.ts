@@ -3,25 +3,21 @@ const state = () => ({
 })
 
 const actions = {
-  async index({ state }, payload) {
+  async index({ state }: any) {
     try {
-      const res = await this.$axios.get(`${state.baseUrl}/todos`, {
-        params: payload
-      });
+      const res = await (<any>this).$axios.get(`${state.baseUrl}/todos`);
 
       return res.data;
     } catch(err) {
-
       return err;
     }
   },
-  async show({ state }, payload) {
+  async show({ state }: any, payload: { id: string }) {
     try {
-      const res = await this.$axios.get(`${state.baseUrl}/todos/${payload.id}`);
+      const res = await (this as any).$axios.get(`${state.baseUrl}/todos/${payload.id}`);
 
       return res.data;
     } catch(err) {
-
       return err;
     }
   }

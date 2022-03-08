@@ -3,10 +3,10 @@ const state = () => ({
 })
 
 const mutations = {
-  increase(state, payload) {
+  increase(state: {index: number}) {
     state.index++;
   },
-  decrease(state, payload) {
+  decrease(state: {index: number}) {
     state.index--;
   },
 }

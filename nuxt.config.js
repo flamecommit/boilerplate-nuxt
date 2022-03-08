@@ -1,8 +1,5 @@
 export default {
-  // Target: https://go.nuxtjs.dev/config-target
-  target: 'static',
-
-  // Global page headers: https://go.nuxtjs.dev/config-head
+  target: 'server',
   head: {
     title: 'boilerplate-nuxt',
     htmlAttrs: {
