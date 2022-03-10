@@ -10,9 +10,11 @@
 </template>
 
 <script setup>
-import { useStore, useFetch, useRoute } from '@nuxtjs/composition-api'
-import { ref, watch } from '@nuxtjs/composition-api'
-import { onUpdated } from '@nuxtjs/composition-api'
+import { 
+  useStore, useFetch, useRoute,
+  ref, watch,
+  onUpdated
+} from '@nuxtjs/composition-api'
 
 const store = useStore();
 const todoList = ref({});
