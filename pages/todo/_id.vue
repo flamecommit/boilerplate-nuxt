@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="page-todo-detail">
     <button type="button" @click="$router.go(-1)">back</button>
 
     <todo-detail :todo="todo" />

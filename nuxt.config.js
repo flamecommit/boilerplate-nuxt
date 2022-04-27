@@ -1,5 +1,6 @@
 export default {
   target: 'server',
+
   head: {
     title: 'boilerplate-nuxt',
     htmlAttrs: {
@@ -8,8 +9,8 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      { name: 'format-detection', content: 'telephone=no' },
       { hid: 'description', name: 'description', content: '' },
-      { name: 'format-detection', content: 'telephone=no' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
@@ -17,6 +18,7 @@ export default {
   },
 
   css: [],
+
   plugins: [],
 
   // components 자동 import 여부
@@ -35,5 +37,6 @@ export default {
   axios: {
     baseURL: '/',
   },
+
   build: {}
 }

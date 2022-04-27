@@ -1,7 +1,5 @@
 <template>
-  <Teleport to="body">
-    <div class="modal-wrap">
-      <slot></slot>
-    </div>
-  </Teleport>
+  <div class="modal-wrap">
+    <slot></slot>
+  </div>
 </template>

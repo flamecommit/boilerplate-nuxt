@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="page-todo-index">
     <p>Todo List</p>
     <ul>
       <li v-for="todo in todoList" :key="todo.id">
